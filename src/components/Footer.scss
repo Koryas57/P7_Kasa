@@ -1,6 +1,12 @@
 .footer {
   background-color: #000;
   color: #fff;
-  padding: 1rem;
+  padding: 3rem 8rem;
   text-align: center;
+  & img {
+    height: 40px;
+    color: #fff;
+    filter: brightness(0) invert(1);
+    margin: 0 auto;
+  }
 }
