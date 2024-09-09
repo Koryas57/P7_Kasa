@@ -3,10 +3,14 @@
   color: #fff;
   padding: 3rem 8rem;
   text-align: center;
+  margin-top: 15px;
   & img {
     height: 40px;
     color: #fff;
     filter: brightness(0) invert(1);
     margin: 0 auto;
+    @media (min-width: 768px) {
+      transform: scale(0.8);
+    }
   }
 }

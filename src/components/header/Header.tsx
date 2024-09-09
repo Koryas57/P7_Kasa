@@ -1,8 +1,9 @@
-import logo from '../assets/LOGO.png';
+import React from 'react';
+import logo from '../../assets/LOGO.png';
 import { Link } from 'react-router-dom';
 import './Header.scss';
 
-const Header = () => {
+export const Header:React.FC = () => {
     return (
             <header>
                 <div className="logo">
@@ -10,10 +11,8 @@ const Header = () => {
                 </div>
                 <nav>
                     <Link to="/">Accueil</Link>
-                    <Link to="/src/pages/Apropos">A propos</Link>
+                    <Link to="/about">A propos</Link>
                 </nav>
             </header>
     );
 };
-
-export default Header;

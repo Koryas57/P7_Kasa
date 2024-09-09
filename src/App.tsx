@@ -1,20 +1,21 @@
+import React from 'react';
 import './App.css'
 import './index.scss'
 import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout.tsx';
-import Home  from './pages/Home.tsx'
-import { NotFoundPage } from './pages/NotFoundPage.tsx';
+import { Layout } from './components/layout/Layout.tsx';
+import { Home } from './pages/home/Home.tsx';
+import { About } from './pages/about/About.tsx';
+import { NotFoundPage } from './pages/error/NotFoundPage.tsx';
 
-const App = () => {
+export const App:React.FC = () => {
 
   return (
-    <Layout>
+  <Layout>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   </Layout>
   );
 };
-
-export default App;
