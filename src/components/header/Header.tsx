@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../assets/LOGO.png';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
 export const Header:React.FC = () => {
@@ -10,8 +10,8 @@ export const Header:React.FC = () => {
                     <img src={logo} alt="Logo textuel Kasa avec une maison à la place de la première lettre A" />
                 </div>
                 <nav>
-                    <Link to="/">Accueil</Link>
-                    <Link to="/about">A propos</Link>
+                    <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>Accueil</NavLink>
+                    <NavLink to="/about" className={(nav) => (nav.isActive ? "nav-active" : "")}>A propos</NavLink>
                 </nav>
             </header>
     );

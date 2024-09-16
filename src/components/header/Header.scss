@@ -33,9 +33,9 @@ nav {
   & a {
     text-decoration: none;
     color: #000;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 600;
-    margin: 0 10px;
+    margin: 0 0 0 3vw;
     @media (min-width: 768px) {
       text-transform: capitalize;
       font-size: 24px;
@@ -45,4 +45,8 @@ nav {
       margin: 0 10px;
     }
   }
+}
+
+.nav-active {
+  text-decoration: underline;
 }

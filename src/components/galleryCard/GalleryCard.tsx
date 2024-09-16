@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './GalleryCard.scss';
 
+// We use an interface to easily use data from the database when needed 
 export interface CardData {
     id: string,
     title: string,
@@ -25,11 +26,13 @@ interface GalleryCardProps {
 
 export const GalleryCard:React.FC<GalleryCardProps> = ({cardData}) => {
     return (
-        <Link to={`/card/${cardData.id}`}>
+        // We use the gotten id to fill the path of the cards according to the database 
+        <NavLink to={`/card/${cardData.id}`}>
         <div className='card'>
+            {/* Then we use the cover image and title to make the gallery */}
             <img src={cardData.cover} alt="Picture cover" />
             <h2>{cardData.title}</h2>
         </div>
-        </Link>
+        </NavLink>
     );
 };
