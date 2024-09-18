@@ -13,6 +13,7 @@ export const App:React.FC = () => {
   return (
   <Layout>
     <Routes>
+      <Route path='/P7_Kasa' element={<Home />} />
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="*" element={<NotFoundPage />} />
