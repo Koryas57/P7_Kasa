@@ -7,8 +7,8 @@ import { Collapse } from '../../components/collapse/Collapse';
 import { Carrousel } from '../../components/carrousel/Carrousel';
 
 export const CardPage:React.FC = () => {
-    const {id} = useParams()
-    const dataGroup = cards_data.find((dataGroup: CardData) => dataGroup.id === id)
+    const {id} = useParams() // We use useParams to pick the id from the URL
+    const dataGroup = cards_data.find((dataGroup: CardData) => dataGroup.id === id) // We browse our interface CardData to find the id of the rent
     
     if(!dataGroup){
         return <Navigate to="/error404" />
@@ -16,12 +16,12 @@ export const CardPage:React.FC = () => {
 
     
     return (
-        <div className="CardsPage">
-                <Carrousel id={id} />
-                <div className="info">
-                    <div className='sec12'>
-                        <div className='info-section info-section1'>
-                            <div className='title-and-loc'>
+        <div className="housing-section">
+                <Carrousel id={id} /> {/* Displaying Carousel Component with housing images according to them id */}
+                <div className="housing-info">
+                        {/* In the first section we pick the title, location and tags strings to fill our template */}
+                        
+                            <div className='title-and-location'>
                                 <h2>{dataGroup.title}</h2>
                                 <p>{dataGroup.location}</p>
                             </div>
@@ -30,24 +30,27 @@ export const CardPage:React.FC = () => {
                                     <p key={index}>{tag}</p>
                                 ))}
                             </div>
-                        </div>
-                        <div className='info-section info-section2'>
-                            <div className='account-info'>
-                                <p>{dataGroup.host.name}</p>
-                                <img src={dataGroup.host.picture} alt="pp" />
+                        
+                        {/* Here we display the host name, profile picture and the stars rating system with a ternary expression */}
+                        
+                            <div className='host-section'>
+                                <div className='stars-rating'>
+                                        {Array.from({ length: 5 }, (_, index) => (
+                                            <i
+                                            key={index}
+                                            className={`fa-solid fa-star ${index < + dataGroup.rating ? 'active-star' : 'disabled-star'}`}
+                                            >
+                                            </i>
+                                         ))}
+                                </div>
+                                <div className="host-info">
+                                    <p>{dataGroup.host.name}</p>
+                                    <img src={dataGroup.host.picture} alt="Photo de profil de l'hôte" />
+                                </div>
                             </div>
-                            <div className='stars-rating'>
-                                {Array.from({ length: 5 }, (_, index) => (
-                                    <i
-                                        key={index}
-                                        className={`fa-solid fa-star ${index < +dataGroup.rating ? 'active-star' : 'disabled-star'}`}
-                                    >
-                                    </i>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    <div className='info-section info-section3'>
+                </div>
+                        {/* In the last section we call our Collapse Components with description and equipments list from dataGroup */}
+                            <div className='collapse-section'>
                         <Collapse
                             title="Description"
                             content={dataGroup.description}
@@ -56,9 +59,8 @@ export const CardPage:React.FC = () => {
                             title="Équipement"
                             content={dataGroup.equipments.map((equipment, index) => (<span key={index}>{equipment}</span>))}
                         />
-                    </div>
-                </div>
-            </div>
+                            </div>
+        </div>
     );
 };
 

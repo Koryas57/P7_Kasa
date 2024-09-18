@@ -1,6 +1,7 @@
 .collapse-element {
   width: 90%;
   height: 5.5vh;
+  font-family: "Montserrat", sans serif;
   margin-top: 2%;
   transition-duration: 1s;
   overflow: hidden;
@@ -10,12 +11,12 @@
     background-color: #ff6060;
     color: white;
     height: 5.5vh;
-    border-radius: 5px;
+    border-radius: 10px;
     position: relative;
     z-index: 2;
     margin: 0;
     padding-left: 2%;
-    font-size: 1.2vw;
+    font-size: 18px;
     i {
       position: absolute;
       right: 1%;

@@ -1,250 +1,105 @@
-.CardPage {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  font-family: "Montserrat", sans-serif;
-  .imgDiv {
-    position: relative;
-    overflow: hidden;
-    border-radius: 25px;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 415px;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .active {
-      display: flex;
-    }
-    .disabled {
-      display: none;
-    }
-    .left-right-div {
-      position: absolute;
-      width: 100%;
-      height: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      span {
-        color: white;
-        font-size: 4.5vw;
-        margin: 2%;
-        cursor: pointer;
-      }
-    }
-    p {
-      position: absolute;
-      color: white;
-      bottom: 1%;
-    }
-  }
-  .info {
-    width: 90%;
-    margin-top: 3%;
-    margin-bottom: 1%;
-    .sec12 {
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      justify-content: space-between;
-      .info-section1 {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: center;
-        .title-and-loc {
-          display: flex;
-          align-items: flex-start;
-          flex-direction: column;
-          justify-content: center;
-          h2 {
-            color: #ff6060;
-            font-size: 2.25rem;
-            margin: 0;
-            padding: 0;
-          }
-          p {
-            margin: 0;
-            padding: 0;
-            margin-top: 1%;
-            font-size: 1.13rem;
-            font-weight: 500;
-          }
-        }
-        .tags {
-          width: auto;
-          display: flex;
-          align-items: center;
-          flex-direction: row;
-          justify-content: space-evenly;
-          margin-top: 5%;
-          gap: 10px;
-          p {
-            background-color: #ff6060;
-            color: white;
-            margin: 0;
-            padding: 2px 2vw;
-            font-size: 1rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            white-space: nowrap;
-          }
-        }
-      }
-      .info-section2 {
-        width: 20%;
-        display: flex;
-        align-items: flex-end;
-        flex-direction: column;
-        justify-content: flex-end;
-        .account-info {
-          height: auto;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          flex-direction: row;
-          justify-content: flex-end;
-          p {
-            color: #ff6060;
-            margin-right: 5%;
-            font-size: 1.125rem;
-            text-align: right;
-            width: auto;
-            white-space: nowrap;
-          }
-          img {
-            height: 7vh;
-            border-radius: 50%;
-          }
-        }
-        .stars-rating {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding-top: 13%;
-          font-size: 1.5rem;
-          gap: 10px;
-          i {
-            margin: 0;
-            padding: 0;
-          }
-          .active-star {
-            color: #ff6060;
-          }
-          .disabled-star {
-            color: #e3e3e3;
-          }
-        }
-      }
-    }
-    .info-section3 {
-      $duration-time: 1s;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      .serie {
-        width: 45%;
-      }
-    }
+.housing-info {
+  @media (min-width: 1150px) {
+    height: 12vh;
   }
 }
-/****** MOBILE ******/
-@media (max-width: 768px) {
-  .CardsPage {
-    .imgDiv {
-      border-radius: 10px;
-      height: 255px;
-      .left-right-div {
-        span {
-          font-size: 7vw;
-        }
-      }
-      p {
-        display: none;
-      }
+
+.title-and-location h2 {
+  font-size: 28px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 0;
+  @media (min-width: 768px) {
+    width: 65%;
+  }
+}
+
+.title-and-location p {
+  margin-bottom: 0;
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2vw;
+  p {
+    height: min-content;
+    width: min-content;
+    background: #ff6060;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 2vw;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    text-wrap: nowrap;
+  }
+}
+
+.host-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  p {
+    height: fit-content;
+    width: 3vw;
+    color: #ff6060;
+    font-size: 18px;
+    @media (max-width: 768px) {
+      width: 5vw;
+      font-size: 16px;
     }
-    .info {
-      width: 90%;
-      .sec12 {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        .info-section1 {
-          width: 100%;
-          .title-and-loc {
-            h2 {
-              font-size: 5vw;
-            }
-            p {
-              font-size: 3vw;
-            }
-          }
-          .tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            p {
-              font-size: 0.655rem;
-              margin-bottom: 15px;
-              border-radius: 5px;
-              padding: 2px 3vw;
-            }
-          }
-        }
-        .info-section2 {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          flex-direction: row-reverse;
-          justify-content: space-between;
-          .account-info {
-            width: 37%;
-            img {
-              height: 3.801vh;
-            }
-            p {
-              font-size: 3vw;
-              line-height: 2vh;
-            }
-          }
-          .stars-rating {
-            padding-top: initial;
-            i {
-              font-size: 3vw;
-            }
-          }
-        }
-      }
-      .info-section3 {
-        display: flex;
-        flex-direction: column;
-        .serie {
-          margin-bottom: 4%;
-          width: 100%;
-          height: auto;
-          h3 {
-            font-size: 3vw;
-            i {
-              font-size: 5vw;
-              margin-right: 2%;
-            }
-          }
-          p {
-            font-size: 3vw;
-          }
-        }
-      }
+  }
+  img {
+    border-radius: 50%;
+    transform: scale(0.5) translate(50%);
+  }
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    transform: translateY(-9vh);
+  }
+}
+
+.host-info {
+  display: flex;
+  align-items: center;
+  width: min-content;
+  justify-content: flex-end;
+}
+
+.stars-rating {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  gap: 10px;
+  i {
+    margin: 0;
+    padding: 0;
+  }
+  .active-star {
+    color: #ff6060;
+  }
+  .disabled-star {
+    color: #e3e3e3;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.3rem;
+  }
+}
+
+.housing-section .collapse-section {
+  @media (min-width: 768px) {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    .collapse-element {
+      width: 46%;
     }
   }
 }
